@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Load Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS v4 via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'ibm-serif': ['"IBM Plex Serif"', 'serif'],
+            'ibm-sans': ['"IBM Plex Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white flex flex-col min-h-screen font-ibm-sans">
+
+  <!-- NAVIGATION BAR -->
+  <nav class="bg-[#191A1C] text-white w-full font-ibm-serif relative z-50">
+    <!-- Desktop & Tablet Navbar -->
+    <div class="hidden md:flex mx-auto max-w-[1280px] h-[80px] items-center justify-between px-5 lg:px-[100px]">
+      <a href="index.html" class="font-bold text-[24px] leading-none">Webino Blogs</a>
+      <div class="flex items-center gap-[30px] text-[14px] font-ibm-sans font-semibold tracking-wider">
+        <a href="reports.html" class="relative uppercase transition-all duration-300 ease-out hover:opacity-80 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:ease-out hover:after:w-full">Reports</a>
+        <a href="blogs.html" class="relative uppercase transition-all duration-300 ease-out hover:opacity-80 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:ease-out hover:after:w-full">Blogs</a>
+        <a href="sports.html" class="relative uppercase transition-all duration-300 ease-out hover:opacity-80 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:ease-out hover:after:w-full">Sports</a>
+      </div>
+    </div>
+
+    <!-- Mobile Navbar -->
+    <div class="md:hidden flex flex-col w-full px-5 py-4 transition-all duration-300 ease-out" id="mobile-nav-container">
+      <div class="flex items-center h-[30px] relative">
+        <button id="mobile-menu-btn" class="absolute left-0 z-10 w-6 h-6 flex items-center justify-center focus:outline-none cursor-pointer">
+          <svg id="icon-menu" class="w-6 h-6 transition-transform duration-300 ease-out" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <svg id="icon-close" class="hidden w-6 h-6 transition-transform duration-300 ease-out" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <a href="index.html" class="w-full text-center font-bold text-[24px] leading-none">WB</a>
+      </div>
+      <div id="mobile-menu-links" class="hidden flex-col items-center gap-4 pt-10 pb-5 text-[14px] font-ibm-sans font-semibold tracking-wider">
+        <a href="reports.html" class="relative uppercase transition-all duration-300 ease-out hover:opacity-80 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:ease-out hover:after:w-full">Reports</a>
+        <a href="blogs.html" class="relative uppercase transition-all duration-300 ease-out hover:opacity-80 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:ease-out hover:after:w-full">Blogs</a>
+        <a href="sports.html" class="relative uppercase transition-all duration-300 ease-out hover:opacity-80 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:ease-out hover:after:w-full">Sports</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT (Reports Page) -->
+  <main class="flex-grow w-full pb-[60px] lg:pb-[100px]">
+    
+    <!-- PAGE HEADER -->
+    <section class="w-full bg-[#DD8E54] h-[199px] md:h-[240px] lg:h-[286px] flex flex-col justify-center">
+      <div class="w-full max-w-[1280px] mx-auto px-[30px] lg:px-[100px]">
+        <h1 class="font-ibm-serif font-bold text-[24px] lg:text-[40px] text-[#191A1C] leading-none mb-[10px] lg:mb-[15px]">
+          Reports
+        </h1>
+        <p class="font-ibm-sans font-regular text-[12px] lg:text-[16px] text-[#191A1C] leading-normal max-w-[239px] lg:max-w-[527px]">
+          Delve into in-depth analysis and comprehensive reports on trending topics, industry trends, and insightful research findings.
+        </p>
+      </div>
+    </section>
+
+    <!-- ARTICLES LIST -->
+    <section class="w-full max-w-[1280px] mx-auto px-[30px] lg:px-[100px] mt-[40px] lg:mt-[60px] flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-col gap-[35px] md:gap-[30px] lg:gap-[60px]">
+      
+      <!-- Article 1 -->
+      <a href="/article.html" class="flex flex-col lg:flex-row gap-[10px] md:gap-[15px] lg:gap-[30px] group cursor-pointer w-full lg:h-[220px]">
+        <!-- Image Container -->
+        <div class="w-full lg:w-[346px] aspect-[257/136] md:aspect-[257/136] lg:aspect-auto lg:h-[220px] rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
+          <div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-out group-hover:scale-105" style="background-image: url('Article7.png');"></div>
+          <div class="absolute inset-0 bg-center bg-cover opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70" style="background-image: url('Shadow.png');"></div>
+        </div>
+        <!-- Content Container -->
+        <div class="flex flex-col justify-center gap-[4px] md:gap-[8px] lg:gap-[15px] w-full lg:w-[704px]">
+          <!-- Category & Date -->
+          <div class="flex items-center gap-[3px] lg:gap-[6px] h-[20px] md:h-[24px] lg:h-[26px]">
+            <span class="border border-[#3B4046] rounded-[5px] px-[8px] lg:px-[11px] py-[2px] lg:py-[5px] text-[8px] md:text-[10px] lg:text-[12px] font-ibm-sans font-semibold uppercase text-[#3B4046] leading-none">Reports</span>
+            <span class="text-[#3B4046] text-[8px] md:text-[10px] lg:text-[12px]">•</span>
+            <span class="text-[#3B4046] font-ibm-sans text-[8px] md:text-[10px] lg:text-[12px] leading-none">August 21, 2023</span>
+          </div>
+          <!-- Title -->
+          <h3 class="font-ibm-serif font-bold text-[12px] md:text-[18px] lg:text-[24px] leading-tight lg:leading-none text-[#191A1C] transition-colors duration-300 group-hover:text-[#787F87]">
+            Mga Tomasino humakot ng pwesto sa August 2023 MTLE; UST itinanghal na fifth top-performing school
+          </h3>
+          <!-- Description -->
+          <p class="font-ibm-sans font-regular text-[8px] md:text-[12px] lg:text-[16px] leading-tight lg:leading-normal text-[#191A1C] opacity-90 mt-[2px] lg:mt-0 line-clamp-3 lg:line-clamp-none">
+            367 mula sa 391 na mga Tomasinong kumuha ng pagsusulit ang nakapasa dahilan upang itanghal na pang lima ang Unibersidad sa mga top-performing schools sa August 2023 MTLE.
+          </p>
+        </div>
+      </a>
+
+      <!-- Article 2 -->
+      <a href="/article.html" class="flex flex-col lg:flex-row gap-[10px] md:gap-[15px] lg:gap-[30px] group cursor-pointer w-full lg:h-[220px]">
+        <div class="w-full lg:w-[346px] aspect-[257/136] md:aspect-[257/136] lg:aspect-auto lg:h-[220px] rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
+          <div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-out group-hover:scale-105" style="background-image: url('Article5.png');"></div>
+          <div class="absolute inset-0 bg-center bg-cover opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70" style="background-image: url('Shadow.png');"></div>
+        </div>
+        <div class="flex flex-col justify-center gap-[4px] md:gap-[8px] lg:gap-[15px] w-full lg:w-[704px]">
+          <div class="flex items-center gap-[3px] lg:gap-[6px] h-[20px] md:h-[24px] lg:h-[26px]">
+            <span class="border border-[#3B4046] rounded-[5px] px-[8px] lg:px-[11px] py-[2px] lg:py-[5px] text-[8px] md:text-[10px] lg:text-[12px] font-ibm-sans font-semibold uppercase text-[#3B4046] leading-none">Reports</span>
+            <span class="text-[#3B4046] text-[8px] md:text-[10px] lg:text-[12px]">•</span>
+            <span class="text-[#3B4046] font-ibm-sans text-[8px] md:text-[10px] lg:text-[12px] leading-none">August 16, 2023</span>
+          </div>
+          <h3 class="font-ibm-serif font-bold text-[12px] md:text-[18px] lg:text-[24px] leading-tight lg:leading-none text-[#191A1C] transition-colors duration-300 group-hover:text-[#787F87]">
+            Tomasino pasok sa top 10 ng kauna-unahang food tech boards
+          </h3>
+          <p class="font-ibm-sans font-regular text-[8px] md:text-[12px] lg:text-[16px] leading-tight lg:leading-normal text-[#191A1C] opacity-90 mt-[2px] lg:mt-0 line-clamp-3 lg:line-clamp-none">
+            Mula sa 40 na mga estudyanteng nanguna sa FTLE 2023, tanging sina Caumban at isang alumna mula sa Xavier University ang pasok sa listahan na hindi nagmula sa Unibersidad ng Pilipinas.
+          </p>
+        </div>
+      </a>
+
+      <!-- Article 3 -->
+      <a href="/article.html" class="flex flex-col lg:flex-row gap-[10px] md:gap-[15px] lg:gap-[30px] group cursor-pointer w-full lg:h-[220px]">
+        <div class="w-full lg:w-[346px] aspect-[257/136] md:aspect-[257/136] lg:aspect-auto lg:h-[220px] rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
+          <div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-out group-hover:scale-105" style="background-image: url('Article11.png');"></div>
+          <div class="absolute inset-0 bg-center bg-cover opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70" style="background-image: url('Shadow.png');"></div>
+        </div>
+        <div class="flex flex-col justify-center gap-[4px] md:gap-[8px] lg:gap-[15px] w-full lg:w-[704px]">
+          <div class="flex items-center gap-[3px] lg:gap-[6px] h-[20px] md:h-[24px] lg:h-[26px]">
+            <span class="border border-[#3B4046] rounded-[5px] px-[8px] lg:px-[11px] py-[2px] lg:py-[5px] text-[8px] md:text-[10px] lg:text-[12px] font-ibm-sans font-semibold uppercase text-[#3B4046] leading-none">Reports</span>
+            <span class="text-[#3B4046] text-[8px] md:text-[10px] lg:text-[12px]">•</span>
+            <span class="text-[#3B4046] font-ibm-sans text-[8px] md:text-[10px] lg:text-[12px] leading-none">August 09, 2023</span>
+          </div>
+          <h3 class="font-ibm-serif font-bold text-[12px] md:text-[18px] lg:text-[24px] leading-tight lg:leading-none text-[#191A1C] transition-colors duration-300 group-hover:text-[#787F87]">
+            Mga Tomasino nanguna sa August 2023 BLEPP; UST tinanghal na isa sa mga Top Performing-Schools
+          </h3>
+          <p class="font-ibm-sans font-regular text-[8px] md:text-[12px] lg:text-[16px] leading-tight lg:leading-normal text-[#191A1C] opacity-90 mt-[2px] lg:mt-0 line-clamp-3 lg:line-clamp-none">
+            Pitong Tomasino ang nakasungkit ng pwesto sa August 2023 Psychometrician licensure examination habang isa naman para sa Psychology Licensure Examination.
+          </p>
+        </div>
+      </a>
+
+      <!-- Article 4 -->
+      <a href="/article.html" class="flex flex-col lg:flex-row gap-[10px] md:gap-[15px] lg:gap-[30px] group cursor-pointer w-full lg:h-[220px]">
+        <div class="w-full lg:w-[346px] aspect-[257/136] md:aspect-[257/136] lg:aspect-auto lg:h-[220px] rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
+          <div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-out group-hover:scale-105" style="background-image: url('Article6.png');"></div>
+          <div class="absolute inset-0 bg-center bg-cover opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70" style="background-image: url('Shadow.png');"></div>
+        </div>
+        <div class="flex flex-col justify-center gap-[4px] md:gap-[8px] lg:gap-[15px] w-full lg:w-[704px]">
+          <div class="flex items-center gap-[3px] lg:gap-[6px] h-[20px] md:h-[24px] lg:h-[26px]">
+            <span class="border border-[#3B4046] rounded-[5px] px-[8px] lg:px-[11px] py-[2px] lg:py-[5px] text-[8px] md:text-[10px] lg:text-[12px] font-ibm-sans font-semibold uppercase text-[#3B4046] leading-none">Reports</span>
+            <span class="text-[#3B4046] text-[8px] md:text-[10px] lg:text-[12px]">•</span>
+            <span class="text-[#3B4046] font-ibm-sans text-[8px] md:text-[10px] lg:text-[12px] leading-none">August 08, 2023</span>
+          </div>
+          <h3 class="font-ibm-serif font-bold text-[12px] md:text-[18px] lg:text-[24px] leading-tight lg:leading-none text-[#191A1C] transition-colors duration-300 group-hover:text-gray-600">
+            Tiongco: ‘Maging totoo sa sarili, mamayagpag’
+          </h3>
+          <p class="font-ibm-sans font-regular text-[8px] md:text-[12px] lg:text-[16px] leading-tight lg:leading-normal text-[#191A1C] opacity-90 mt-[2px] lg:mt-0 line-clamp-3 lg:line-clamp-none">
+            ICYMI: Ayon kay Tiongco, hindi kailangang itago ang totoong sarili upang mapabilang sa paaralan dahil ang pagiging totoo pati na rin ang pagtitiwala ang bubuo ng makabuluhang koneksyon sa buhay
+          </p>
+        </div>
+      </a>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#191A1C] text-white w-full font-ibm-sans mt-auto">
+    <div class="hidden md:flex mx-auto max-w-[1280px] h-[50px] items-center justify-between px-5 lg:px-[100px]">
+      <div class="text-[12px] font-regular leading-none text-gray-300">
+        © Webino Blogs 2023
+      </div>
+      <div class="flex items-center gap-[27px]">
+        <a href="#" class="hover:opacity-80 transition-opacity"><img src="facebook 1.png" alt="Facebook" class="w-[20px] h-[20px]"></a>
+        <a href="#" class="hover:opacity-80 transition-opacity"><img src="x-twitter 1.png" alt="Twitter" class="w-[20px] h-[20px]"></a>
+        <a href="#" class="hover:opacity-80 transition-opacity"><img src="instagram 1.png" alt="Instagram" class="w-[17.5px] h-[20px]"></a>
+      </div>
+    </div>
+    <div class="md:hidden flex flex-col items-center justify-center h-[75px] gap-3">
+      <div class="text-[12px] font-regular leading-none text-gray-300">
+        © Webino Blogs 2023
+      </div>
+      <div class="flex items-center gap-[15px]">
+        <a href="#" class="hover:opacity-80"><img src="facebook 1.png" alt="Facebook" class="w-[15px] h-[15px]"></a>
+        <a href="#" class="hover:opacity-80"><img src="x-twitter 1.png" alt="Twitter" class="w-[16px] h-[15px]"></a>
+        <a href="#" class="hover:opacity-80"><img src="instagram 1.png" alt="Instagram" class="w-[13px] h-[15px]"></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for Mobile Nav -->
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const iconMenu = document.getElementById('icon-menu');
+    const iconClose = document.getElementById('icon-close');
+    const mobileLinks = document.getElementById('mobile-menu-links');
+    const navContainer = document.getElementById('mobile-nav-container');
+
+    let isMenuOpen = false;
+
+    menuBtn.addEventListener('click', () => {
+      isMenuOpen = !isMenuOpen;
+      if (isMenuOpen) {
+        iconMenu.classList.add('hidden');
+        iconClose.classList.remove('hidden');
+        mobileLinks.classList.remove('hidden');
+        mobileLinks.classList.add('flex');
+      } else {
+        iconMenu.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+        mobileLinks.classList.add('hidden');
+        mobileLinks.classList.remove('flex');
+      }
+    });
+  </script>
+</body>
+</html>
