@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Load Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Tailwind CSS v4 via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -36,19 +34,25 @@
       </div>
     </div>
 
-    <!-- Mobile Navbar -->
+<!-- Mobile Navbar -->
     <div class="md:hidden flex flex-col w-full px-5 py-4 transition-all duration-300 ease-out" id="mobile-nav-container">
-      <div class="flex items-center h-[30px] relative">
-        <button id="mobile-menu-btn" class="absolute left-0 z-10 w-6 h-6 flex items-center justify-center focus:outline-none cursor-pointer">
-          <svg id="icon-menu" class="w-6 h-6 transition-transform duration-300 ease-out" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-          <svg id="icon-close" class="hidden w-6 h-6 transition-transform duration-300 ease-out" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      <div class="flex items-center h-[30px] relative z-20">
+        <button id="mobile-menu-btn" class="absolute left-0 z-30 w-6 h-6 flex items-center justify-center focus:outline-none cursor-pointer">
+          <!-- Hamburger Icon -->
+          <svg id="icon-menu" class="absolute w-6 h-6 transition-all duration-300 ease-out transform rotate-0 opacity-100 scale-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          <!-- Close (X) Icon -->
+          <svg id="icon-close" class="absolute w-6 h-6 transition-all duration-300 ease-out transform -rotate-90 opacity-0 scale-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
-        <a href="#" class="w-full text-center font-bold text-[24px] leading-none">WB</a>
+        <a href="index.html" class="w-full text-center font-bold text-[24px] leading-none">WB</a>
       </div>
-      <div id="mobile-menu-links" class="hidden flex-col items-center gap-4 pt-10 pb-5 text-[14px] font-ibm-sans font-semibold tracking-wider">
-        <a href="reports.html" class="relative uppercase transition-all duration-300 ease-out hover:opacity-80 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:ease-out hover:after:w-full">Reports</a>
-        <a href="blogs.html" class="relative uppercase transition-all duration-300 ease-out hover:opacity-80 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:ease-out hover:after:w-full">Blogs</a>
-        <a href="sports.html" class="relative uppercase transition-all duration-300 ease-out hover:opacity-80 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:ease-out hover:after:w-full">Sports</a>
+      
+      <!-- Dropdown Links (Animates height and opacity instead of hiding) -->
+      <div id="mobile-menu-links" class="flex flex-col items-center text-[14px] font-ibm-sans font-semibold tracking-wider overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0 pointer-events-none">
+        <div class="flex flex-col items-center gap-5 w-full pt-10 pb-5">
+          <a href="reports.html" class="inline-block relative uppercase transition-all duration-300 ease-out hover:opacity-80 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:ease-out hover:after:w-full">Reports</a>
+          <a href="blogs.html" class="inline-block relative uppercase transition-all duration-300 ease-out hover:opacity-80 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:ease-out hover:after:w-full">Blogs</a>
+          <a href="sports.html" class="inline-block relative uppercase transition-all duration-300 ease-out hover:opacity-80 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:ease-out hover:after:w-full">Sports</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -58,20 +62,20 @@
     
     <!-- FEATURED ARTICLE SECTION -->
     <section class="w-full">
-      <a href="/article.html" class="block relative w-full h-[320px] md:h-[400px] lg:h-[520px] rounded-[10px] md:rounded-[20px] overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-shadow duration-300">
+      <div class="block relative w-full h-[320px] md:h-[400px] lg:h-[520px] rounded-[10px] md:rounded-[20px] overflow-hidden group shadow-md hover:shadow-xl transition-shadow duration-300">
         <div class="absolute inset-0 bg-gray-800 bg-center bg-cover" style="background-image: url('Featured.png');"></div>
         <div class="absolute inset-0 bg-center bg-cover opacity-100" style="background-image: url('Shadow.png');"></div>
-        <div class="absolute inset-0 bg-white opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-20"></div>
+        <div class="absolute inset-0 bg-white opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-15"></div>
 
         <div class="absolute bottom-0 left-0 p-5 md:p-8 lg:p-[53px] lg:pb-[43px] text-white flex flex-col justify-end w-full lg:w-4/5 z-10">
           <h2 class="font-ibm-serif font-bold text-[18px] md:text-[30px] lg:text-[40px] leading-tight lg:leading-none mb-2 md:mb-4 drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
-            Tiger Spikers jolt Blue Eagles for V-League top seat
+            Tiger Spikers jolt Blue Eagles for V-League
           </h2>
           <p class="font-ibm-sans font-regular text-[10px] md:text-[14px] lg:text-[16px] leading-snug lg:leading-normal mb-3 md:mb-5 opacity-90 drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] line-clamp-2 md:line-clamp-none">
             <span class="font-semibold">SPORTS</span> — The Tiger Spikers now hold a 5-1 win-loss card while the Blue Eagles dropped to 4-1 as the V-League semi-finals nears.
           </p>
           <div class="flex items-center gap-[6px] lg:gap-[8px] opacity-80 drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]">
-            <img src="calendar-regular 1.png" alt="Calendar" class="w-[11px] h-[12px] lg:w-[17px] lg:h-[19px]">
+            <img src="calendar-regular1.png" alt="Calendar" class="w-[11px] h-[12px] lg:w-[17px] lg:h-[19px]">
             <span class="font-ibm-sans font-regular text-[10px] md:text-[12px] leading-none">September 10, 2023</span>
           </div>
         </div>
@@ -87,8 +91,8 @@
       <div class="flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-row gap-[21px] lg:gap-[67px]">
         
         <!-- Article 1 -->
-        <a href="/article.html" class="flex flex-row md:flex-col lg:w-[220px] h-[54px] md:h-auto gap-[12px] md:gap-[15px] group cursor-pointer">
-          <div class="w-[80px] h-[54px] md:w-full md:h-[140px] rounded-[6px] md:rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
+        <a href="article.html" class="flex flex-row md:flex-col lg:w-[220px] h-[54px] md:h-auto gap-[12px] md:gap-[15px] group cursor-pointer">
+          <div class="w-[80px] h-[54px] md:w-full md:h-[220px] lg:h-[140px] rounded-[6px] md:rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
             <div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-out group-hover:scale-105" style="background-image: url('Article1.png');"></div>
             <div class="absolute inset-0 bg-center bg-cover opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70" style="background-image: url('Shadow.png');"></div>
           </div>
@@ -105,8 +109,8 @@
         </a>
 
         <!-- Article 2 -->
-        <a href="/article.html" class="flex flex-row md:flex-col lg:w-[220px] h-[54px] md:h-auto gap-[12px] md:gap-[15px] group cursor-pointer">
-          <div class="w-[80px] h-[54px] md:w-full md:h-[140px] rounded-[6px] md:rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
+        <a href="article.html" class="flex flex-row md:flex-col lg:w-[220px] h-[54px] md:h-auto gap-[12px] md:gap-[15px] group cursor-pointer">
+          <div class="w-[80px] h-[54px] md:w-full md:h-[220px] lg:h-[140px] rounded-[6px] md:rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
             <div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-out group-hover:scale-105" style="background-image: url('Article2.png');"></div>
             <div class="absolute inset-0 bg-center bg-cover opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70" style="background-image: url('Shadow.png');"></div>
           </div>
@@ -123,8 +127,8 @@
         </a>
 
         <!-- Article 3 -->
-        <a href="/article.html" class="flex flex-row md:flex-col lg:w-[220px] h-[54px] md:h-auto gap-[12px] md:gap-[15px] group cursor-pointer">
-          <div class="w-[80px] h-[54px] md:w-full md:h-[140px] rounded-[6px] md:rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
+        <a href="article.html" class="flex flex-row md:flex-col lg:w-[220px] h-[54px] md:h-auto gap-[12px] md:gap-[15px] group cursor-pointer">
+          <div class="w-[80px] h-[54px] md:w-full md:h-[220px] lg:h-[140px] rounded-[6px] md:rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
             <div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-out group-hover:scale-105" style="background-image: url('Article3.png');"></div>
             <div class="absolute inset-0 bg-center bg-cover opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70" style="background-image: url('Shadow.png');"></div>
           </div>
@@ -141,8 +145,8 @@
         </a>
 
         <!-- Article 4 -->
-        <a href="/article.html" class="flex flex-row md:flex-col lg:w-[220px] h-[54px] md:h-auto gap-[12px] md:gap-[15px] group cursor-pointer">
-          <div class="w-[80px] h-[54px] md:w-full md:h-[140px] rounded-[6px] md:rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
+        <a href="article.html" class="flex flex-row md:flex-col lg:w-[220px] h-[54px] md:h-auto gap-[12px] md:gap-[15px] group cursor-pointer">
+          <div class="w-[80px] h-[54px] md:w-full md:h-[220px] lg:h-[140px] rounded-[6px] md:rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
             <div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-out group-hover:scale-105" style="background-image: url('Article4.png');"></div>
             <div class="absolute inset-0 bg-center bg-cover opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70" style="background-image: url('Shadow.png');"></div>
           </div>
@@ -161,16 +165,15 @@
       </div>
     </section>
 
-    <!-- HIGHLIGHTED REPORTS SECTION (Full Width Dark Background) -->
     <section class="w-[100vw] relative left-1/2 -translate-x-1/2 bg-[#191A1C] py-[40px] lg:py-[51px] mt-[40px] lg:mt-[51px]">
       
-      <!-- Content Container (with proper px-100px padding for desktop) -->
+      <!-- Content Container  -->
       <div class="w-full max-w-[1280px] mx-auto px-[30px] md:px-5 lg:px-[100px]">
         <div class="flex flex-col md:grid md:grid-cols-2 gap-[44px] lg:gap-[52px]">
           
           <!-- Report 1 -->
-          <a href="/article.html" class="flex flex-col gap-[10px] lg:gap-[15px] group cursor-pointer">
-            <div class="w-full aspect-[257/136] md:aspect-auto md:h-[200px] lg:h-[271px] rounded-[10px] bg-[#0D0E10] overflow-hidden relative flex-shrink-0">
+          <a href="article.html" class="flex flex-col gap-[10px] lg:gap-[15px] group cursor-pointer">
+            <div class="w-full aspect-[257/136] md:aspect-auto md:h-[200px] lg:h-[271px] rounded-[10px] group-hover:rounded-[14px] bg-[#0D0E10] overflow-hidden relative flex-shrink-0 transition-all duration-300">
               <div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-out group-hover:scale-105" style="background-image: url('Article5.png');"></div>
               <div class="absolute inset-0 bg-center bg-cover opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70" style="background-image: url('Shadow.png');"></div>
             </div>
@@ -192,8 +195,8 @@
           </a>
 
           <!-- Report 2 -->
-          <a href="/article.html" class="flex flex-col gap-[10px] lg:gap-[15px] group cursor-pointer">
-            <div class="w-full aspect-[257/136] md:aspect-auto md:h-[200px] lg:h-[271px] rounded-[10px] bg-[#0D0E10] overflow-hidden relative flex-shrink-0">
+          <a href="article.html" class="flex flex-col gap-[10px] lg:gap-[15px] group cursor-pointer">
+            <div class="w-full aspect-[257/136] md:aspect-auto md:h-[200px] lg:h-[271px] rounded-[10px] group-hover:rounded-[14px] bg-[#0D0E10] overflow-hidden relative flex-shrink-0 transition-all duration-300">
               <div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-out group-hover:scale-105" style="background-image: url('Article6.png');"></div>
               <div class="absolute inset-0 bg-center bg-cover opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70" style="background-image: url('Shadow.png');"></div>
             </div>
@@ -227,8 +230,8 @@
       <div class="flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-row gap-[21px] lg:gap-[67px]">
         
         <!-- Article 1 -->
-        <a href="/article.html" class="flex flex-row md:flex-col lg:w-[220px] h-[54px] md:h-auto gap-[12px] md:gap-[15px] group cursor-pointer">
-          <div class="w-[80px] h-[54px] md:w-full md:h-[140px] rounded-[6px] md:rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
+        <a href="article.html" class="flex flex-row md:flex-col lg:w-[220px] h-[54px] md:h-auto gap-[12px] md:gap-[15px] group cursor-pointer">
+          <div class="w-[80px] h-[54px] md:w-full md:h-[220px] lg:h-[140px] rounded-[6px] md:rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
             <div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-out group-hover:scale-105" style="background-image: url('Article7.png');"></div>
             <div class="absolute inset-0 bg-center bg-cover opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70" style="background-image: url('Shadow.png');"></div>
           </div>
@@ -245,8 +248,8 @@
         </a>
 
         <!-- Article 2 -->
-        <a href="/article.html" class="flex flex-row md:flex-col lg:w-[220px] h-[54px] md:h-auto gap-[12px] md:gap-[15px] group cursor-pointer">
-          <div class="w-[80px] h-[54px] md:w-full md:h-[140px] rounded-[6px] md:rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
+        <a href="article.html" class="flex flex-row md:flex-col lg:w-[220px] h-[54px] md:h-auto gap-[12px] md:gap-[15px] group cursor-pointer">
+          <div class="w-[80px] h-[54px] md:w-full md:h-[220px] lg:h-[140px] rounded-[6px] md:rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
             <div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-out group-hover:scale-105" style="background-image: url('Article8.png');"></div>
             <div class="absolute inset-0 bg-center bg-cover opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70" style="background-image: url('Shadow.png');"></div>
           </div>
@@ -263,8 +266,8 @@
         </a>
 
         <!-- Article 3 -->
-        <a href="/article.html" class="flex flex-row md:flex-col lg:w-[220px] h-[54px] md:h-auto gap-[12px] md:gap-[15px] group cursor-pointer">
-          <div class="w-[80px] h-[54px] md:w-full md:h-[140px] rounded-[6px] md:rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
+        <a href="article.html" class="flex flex-row md:flex-col lg:w-[220px] h-[54px] md:h-auto gap-[12px] md:gap-[15px] group cursor-pointer">
+          <div class="w-[80px] h-[54px] md:w-full md:h-[220px] lg:h-[140px] rounded-[6px] md:rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
             <div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-out group-hover:scale-105" style="background-image: url('Article9.png');"></div>
             <div class="absolute inset-0 bg-center bg-cover opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70" style="background-image: url('Shadow.png');"></div>
           </div>
@@ -281,8 +284,8 @@
         </a>
 
         <!-- Article 4 -->
-        <a href="/article.html" class="flex flex-row md:flex-col lg:w-[220px] h-[54px] md:h-auto gap-[12px] md:gap-[15px] group cursor-pointer">
-          <div class="w-[80px] h-[54px] md:w-full md:h-[140px] rounded-[6px] md:rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
+        <a href="article.html" class="flex flex-row md:flex-col lg:w-[220px] h-[54px] md:h-auto gap-[12px] md:gap-[15px] group cursor-pointer">
+          <div class="w-[80px] h-[54px] md:w-full md:h-[220px] lg:h-[140px] rounded-[6px] md:rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
             <div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-out group-hover:scale-105" style="background-image: url('Article10.png');"></div>
             <div class="absolute inset-0 bg-center bg-cover opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70" style="background-image: url('Shadow.png');"></div>
           </div>
@@ -327,28 +330,45 @@
     </div>
   </footer>
 
-  <!-- Script for Mobile Nav -->
+<!-- Script for Mobile Nav Animation -->
   <script>
     const menuBtn = document.getElementById('mobile-menu-btn');
     const iconMenu = document.getElementById('icon-menu');
     const iconClose = document.getElementById('icon-close');
     const mobileLinks = document.getElementById('mobile-menu-links');
-    const navContainer = document.getElementById('mobile-nav-container');
 
     let isMenuOpen = false;
 
     menuBtn.addEventListener('click', () => {
       isMenuOpen = !isMenuOpen;
       if (isMenuOpen) {
-        iconMenu.classList.add('hidden');
-        iconClose.classList.remove('hidden');
-        mobileLinks.classList.remove('hidden');
-        mobileLinks.classList.add('flex');
+        // Animate Icons to X
+        iconMenu.classList.replace('rotate-0', 'rotate-90');
+        iconMenu.classList.replace('opacity-100', 'opacity-0');
+        iconMenu.classList.replace('scale-100', 'scale-50');
+
+        iconClose.classList.replace('-rotate-90', 'rotate-0');
+        iconClose.classList.replace('opacity-0', 'opacity-100');
+        iconClose.classList.replace('scale-50', 'scale-100');
+
+        // Slide Menu Down
+        mobileLinks.classList.replace('max-h-0', 'max-h-[300px]');
+        mobileLinks.classList.replace('opacity-0', 'opacity-100');
+        mobileLinks.classList.replace('pointer-events-none', 'pointer-events-auto');
       } else {
-        iconMenu.classList.remove('hidden');
-        iconClose.classList.add('hidden');
-        mobileLinks.classList.add('hidden');
-        mobileLinks.classList.remove('flex');
+        // Animate Icons back to Hamburger
+        iconMenu.classList.replace('rotate-90', 'rotate-0');
+        iconMenu.classList.replace('opacity-0', 'opacity-100');
+        iconMenu.classList.replace('scale-50', 'scale-100');
+
+        iconClose.classList.replace('rotate-0', '-rotate-90');
+        iconClose.classList.replace('opacity-100', 'opacity-0');
+        iconClose.classList.replace('scale-100', 'scale-50');
+
+        // Slide Menu Up
+        mobileLinks.classList.replace('max-h-[300px]', 'max-h-0');
+        mobileLinks.classList.replace('opacity-100', 'opacity-0');
+        mobileLinks.classList.replace('pointer-events-auto', 'pointer-events-none');
       }
     });
   </script>

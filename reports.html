@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Load Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@700&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Tailwind CSS v4 via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -72,19 +70,20 @@
     <section class="w-full max-w-[1280px] mx-auto px-[30px] lg:px-[100px] mt-[40px] lg:mt-[60px] flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-col gap-[35px] md:gap-[30px] lg:gap-[60px]">
       
       <!-- Article 1 -->
-      <a href="/article.html" class="flex flex-col lg:flex-row gap-[10px] md:gap-[15px] lg:gap-[30px] group cursor-pointer w-full lg:h-[220px]">
+      <a href="article.html" class="flex flex-col lg:flex-row gap-[10px] md:gap-[15px] lg:gap-[30px] group cursor-pointer w-full lg:h-[220px]">
         <!-- Image Container -->
-        <div class="w-full lg:w-[346px] aspect-[257/136] md:aspect-[257/136] lg:aspect-auto lg:h-[220px] rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
+        <div class="w-full lg:w-[346px] aspect-[257/136] md:aspect-[257/136] lg:aspect-auto lg:h-[220px] rounded-[10px] group-hover:rounded-[14px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative transition-all duration-300">
           <div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-out group-hover:scale-105" style="background-image: url('Article7.png');"></div>
           <div class="absolute inset-0 bg-center bg-cover opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70" style="background-image: url('Shadow.png');"></div>
         </div>
         <!-- Content Container -->
         <div class="flex flex-col justify-center gap-[4px] md:gap-[8px] lg:gap-[15px] w-full lg:w-[704px]">
           <!-- Category & Date -->
-          <div class="flex items-center gap-[3px] lg:gap-[6px] h-[20px] md:h-[24px] lg:h-[26px]">
-            <span class="border border-[#3B4046] rounded-[5px] px-[8px] lg:px-[11px] py-[2px] lg:py-[5px] text-[8px] md:text-[10px] lg:text-[12px] font-ibm-sans font-semibold uppercase text-[#3B4046] leading-none">Reports</span>
+          <div class="flex items-center gap-[6px] lg:gap-[9px] h-[20px] md:h-[24px] lg:h-[26px]">
+            <span class="border border-[#3B4046] rounded-[5px] px-[10px] lg:px-[11px] py-[4px] lg:py-[5px] text-[10px] lg:text-[12px] font-ibm-sans font-semibold uppercase text-[#3B4046] leading-none">Reports</span>
             <span class="text-[#3B4046] text-[8px] md:text-[10px] lg:text-[12px]">•</span>
-            <span class="text-[#3B4046] font-ibm-sans text-[8px] md:text-[10px] lg:text-[12px] leading-none">August 21, 2023</span>
+            <span class="md:hidden text-[#3B4046] font-ibm-sans text-[8px] leading-none">September 10, 2023</span>
+            <span class="hidden md:inline text-[#3B4046] font-ibm-sans md:text-[10px] lg:text-[12px] leading-none">August 21, 2023</span>
           </div>
           <!-- Title -->
           <h3 class="font-ibm-serif font-bold text-[12px] md:text-[18px] lg:text-[24px] leading-tight lg:leading-none text-[#191A1C] transition-colors duration-300 group-hover:text-[#787F87]">
@@ -98,14 +97,14 @@
       </a>
 
       <!-- Article 2 -->
-      <a href="/article.html" class="flex flex-col lg:flex-row gap-[10px] md:gap-[15px] lg:gap-[30px] group cursor-pointer w-full lg:h-[220px]">
-        <div class="w-full lg:w-[346px] aspect-[257/136] md:aspect-[257/136] lg:aspect-auto lg:h-[220px] rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
+      <a href="article.html" class="flex flex-col lg:flex-row gap-[10px] md:gap-[15px] lg:gap-[30px] group cursor-pointer w-full lg:h-[220px]">
+        <div class="w-full lg:w-[346px] aspect-[257/136] md:aspect-[257/136] lg:aspect-auto lg:h-[220px] rounded-[10px] group-hover:rounded-[14px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative transition-all duration-300">
           <div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-out group-hover:scale-105" style="background-image: url('Article5.png');"></div>
           <div class="absolute inset-0 bg-center bg-cover opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70" style="background-image: url('Shadow.png');"></div>
         </div>
         <div class="flex flex-col justify-center gap-[4px] md:gap-[8px] lg:gap-[15px] w-full lg:w-[704px]">
-          <div class="flex items-center gap-[3px] lg:gap-[6px] h-[20px] md:h-[24px] lg:h-[26px]">
-            <span class="border border-[#3B4046] rounded-[5px] px-[8px] lg:px-[11px] py-[2px] lg:py-[5px] text-[8px] md:text-[10px] lg:text-[12px] font-ibm-sans font-semibold uppercase text-[#3B4046] leading-none">Reports</span>
+          <div class="flex items-center gap-[6px] lg:gap-[9px] h-[20px] md:h-[24px] lg:h-[26px]">
+            <span class="border border-[#3B4046] rounded-[5px] px-[10px] lg:px-[11px] py-[4px] lg:py-[5px] text-[10px] lg:text-[12px] font-ibm-sans font-semibold uppercase text-[#3B4046] leading-none">Reports</span>
             <span class="text-[#3B4046] text-[8px] md:text-[10px] lg:text-[12px]">•</span>
             <span class="text-[#3B4046] font-ibm-sans text-[8px] md:text-[10px] lg:text-[12px] leading-none">August 16, 2023</span>
           </div>
@@ -119,14 +118,14 @@
       </a>
 
       <!-- Article 3 -->
-      <a href="/article.html" class="flex flex-col lg:flex-row gap-[10px] md:gap-[15px] lg:gap-[30px] group cursor-pointer w-full lg:h-[220px]">
-        <div class="w-full lg:w-[346px] aspect-[257/136] md:aspect-[257/136] lg:aspect-auto lg:h-[220px] rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
+      <a href="article.html" class="flex flex-col lg:flex-row gap-[10px] md:gap-[15px] lg:gap-[30px] group cursor-pointer w-full lg:h-[220px]">
+        <div class="w-full lg:w-[346px] aspect-[257/136] md:aspect-[257/136] lg:aspect-auto lg:h-[220px] rounded-[10px] group-hover:rounded-[14px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative transition-all duration-300">
           <div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-out group-hover:scale-105" style="background-image: url('Article11.png');"></div>
           <div class="absolute inset-0 bg-center bg-cover opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70" style="background-image: url('Shadow.png');"></div>
         </div>
         <div class="flex flex-col justify-center gap-[4px] md:gap-[8px] lg:gap-[15px] w-full lg:w-[704px]">
-          <div class="flex items-center gap-[3px] lg:gap-[6px] h-[20px] md:h-[24px] lg:h-[26px]">
-            <span class="border border-[#3B4046] rounded-[5px] px-[8px] lg:px-[11px] py-[2px] lg:py-[5px] text-[8px] md:text-[10px] lg:text-[12px] font-ibm-sans font-semibold uppercase text-[#3B4046] leading-none">Reports</span>
+          <div class="flex items-center gap-[6px] lg:gap-[9px] h-[20px] md:h-[24px] lg:h-[26px]">
+            <span class="border border-[#3B4046] rounded-[5px] px-[10px] lg:px-[11px] py-[4px] lg:py-[5px] text-[10px] lg:text-[12px] font-ibm-sans font-semibold uppercase text-[#3B4046] leading-none">Reports</span>
             <span class="text-[#3B4046] text-[8px] md:text-[10px] lg:text-[12px]">•</span>
             <span class="text-[#3B4046] font-ibm-sans text-[8px] md:text-[10px] lg:text-[12px] leading-none">August 09, 2023</span>
           </div>
@@ -140,14 +139,14 @@
       </a>
 
       <!-- Article 4 -->
-      <a href="/article.html" class="flex flex-col lg:flex-row gap-[10px] md:gap-[15px] lg:gap-[30px] group cursor-pointer w-full lg:h-[220px]">
-        <div class="w-full lg:w-[346px] aspect-[257/136] md:aspect-[257/136] lg:aspect-auto lg:h-[220px] rounded-[10px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative">
+      <a href="article.html" class="flex flex-col lg:flex-row gap-[10px] md:gap-[15px] lg:gap-[30px] group cursor-pointer w-full lg:h-[220px]">
+        <div class="w-full lg:w-[346px] aspect-[257/136] md:aspect-[257/136] lg:aspect-auto lg:h-[220px] rounded-[10px] group-hover:rounded-[14px] bg-[#0D0E10] flex-shrink-0 overflow-hidden relative transition-all duration-300">
           <div class="absolute inset-0 bg-center bg-cover transition-transform duration-300 ease-out group-hover:scale-105" style="background-image: url('Article6.png');"></div>
           <div class="absolute inset-0 bg-center bg-cover opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-70" style="background-image: url('Shadow.png');"></div>
         </div>
         <div class="flex flex-col justify-center gap-[4px] md:gap-[8px] lg:gap-[15px] w-full lg:w-[704px]">
-          <div class="flex items-center gap-[3px] lg:gap-[6px] h-[20px] md:h-[24px] lg:h-[26px]">
-            <span class="border border-[#3B4046] rounded-[5px] px-[8px] lg:px-[11px] py-[2px] lg:py-[5px] text-[8px] md:text-[10px] lg:text-[12px] font-ibm-sans font-semibold uppercase text-[#3B4046] leading-none">Reports</span>
+          <div class="flex items-center gap-[6px] lg:gap-[9px] h-[20px] md:h-[24px] lg:h-[26px]">
+            <span class="border border-[#3B4046] rounded-[5px] px-[10px] lg:px-[11px] py-[4px] lg:py-[5px] text-[10px] lg:text-[12px] font-ibm-sans font-semibold uppercase text-[#3B4046] leading-none">Reports</span>
             <span class="text-[#3B4046] text-[8px] md:text-[10px] lg:text-[12px]">•</span>
             <span class="text-[#3B4046] font-ibm-sans text-[8px] md:text-[10px] lg:text-[12px] leading-none">August 08, 2023</span>
           </div>
